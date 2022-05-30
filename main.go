@@ -14,7 +14,7 @@ type Response struct {
 
 func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		b, err := json.Marshal(Response{Message: "Hello worlds !"})
+		b, err := json.Marshal(Response{Message: "Hello world !"})
 		if err != nil {
 			log.Fatal(err)
 		}
