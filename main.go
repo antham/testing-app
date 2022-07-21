@@ -19,7 +19,9 @@ func main() {
 			log.Fatal(err)
 		}
 		w.WriteHeader(http.StatusOK)
-		w.Write(b)
+		if _, err := w.Write(b); err != nil {
+			log.Fatal(err)
+		}
 	})
 
 	log.Printf("Starting server on %s\n", port)
